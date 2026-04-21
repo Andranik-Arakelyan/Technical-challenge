@@ -1,0 +1,20 @@
+{
+  "name": "technical-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andranik-Arakelyan/Technical-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andranik-Arakelyan/Technical-challenge/issues"
+  },
+  "homepage": "https://github.com/Andranik-Arakelyan/Technical-challenge#readme"
+}
