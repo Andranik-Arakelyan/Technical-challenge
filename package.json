@@ -1,20 +1,28 @@
 {
   "name": "technical-challenge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "UI and API test suite for Restful Booker Platform",
   "scripts": {
-    "test": "npx playwright test"
+    "test:ui": "playwright test tests/ui",
+    "test:ui:headed": "playwright test tests/ui --headed",
+    "test:ui:report": "playwright show-report",
+    "test:api": "jest --testPathPattern=tests/api --forceExit",
+    "test:all": "npm run test:api && npm run test:ui",
+    "test:auth": "jest --testPathPattern=auth.api && playwright test tests/ui/auth.ui.spec.ts",
+    "test:rooms": "jest --testPathPattern=rooms.api && playwright test tests/ui/rooms.ui.spec.ts",
+    "test:bookings": "jest --testPathPattern=bookings.api && playwright test tests/ui/bookings.ui.spec.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Andranik-Arakelyan/Technical-challenge.git"
+  "devDependencies": {
+    "@jest/globals": "^29.0.0",
+    "@playwright/test": "^1.44.0",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Andranik-Arakelyan/Technical-challenge/issues"
-  },
-  "homepage": "https://github.com/Andranik-Arakelyan/Technical-challenge#readme"
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
 }
