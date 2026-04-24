@@ -11,3 +11,13 @@ export const INVALID_CREDENTIALS = {
 };
 
 
+export const NEW_ROOM = {
+  roomName: 'Test101',
+  type: 'Single',
+  accessible: false,
+  roomPrice: 99,
+  features: ['WiFi', 'TV'],
+  description: 'A cozy test room',
+  image: 'https://www.mwtestconsultancy.co.uk/img/room1.jpg',
+};
+
