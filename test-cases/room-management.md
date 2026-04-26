@@ -1,12 +1,4 @@
-### TC-ROOM-UI-01 · Create a room (UI)
-| | |
-|---|---|
-| **Preconditions** | Admin is logged in |
-| **Steps** | 1. Fill in Room Name, Type, Accessible, Price, optional features <br> 2. Click **Create** |
-| **Expected** | New room row appears in the room listing with correct name |
-| **Automated** | `tests/ui/rooms.ui.spec.ts` |
-
-### TC-ROOM-UI-02 · Room creation fails with empty name (UI)
+### TC-ROOM-UI-01 · Room creation fails with empty name (UI)
 | | |
 |---|---|
 | **Preconditions** | Admin is logged in |
@@ -14,20 +6,21 @@
 | **Expected** | Validation error shown; no new room added to list |
 | **Automated** | `tests/ui/rooms.ui.spec.ts` |
 
+### TC-ROOM-UI-02 · Create a room (UI)
+| | |
+|---|---|
+| **Preconditions** | Admin is logged in |
+| **Steps** | 1. Fill in Room Name, Type, Accessible, Price, optional features <br> 2. Click **Create** |
+| **Expected** | New room row appears in the room listing with correct name |
+| **Automated** | `tests/ui/rooms.ui.spec.ts` |
+
+
 ### TC-ROOM-UI-03 · Delete a room (UI)
 | | |
 |---|---|
 | **Preconditions** | Admin is logged in; a room exists |
 | **Steps** | 1. Locate the target room row <br> 2. Click **Delete** |
 | **Expected** | Room row disappears from the listing |
-| **Automated** | `tests/ui/rooms.ui.spec.ts` |
-
-### TC-ROOM-UI-04 · Room details display correctly after creation (UI)
-| | |
-|---|---|
-| **Preconditions** | Admin is logged in |
-| **Steps** | 1. Create a room with type `Suite`, price `299`, accessible `true` |
-| **Expected** | Room row shows `Suite`, `299`, and accessibility indicator |
 | **Automated** | `tests/ui/rooms.ui.spec.ts` |
 
 ---

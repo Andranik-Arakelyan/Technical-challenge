@@ -12,11 +12,11 @@ export const INVALID_CREDENTIALS = {
 
 
 export const NEW_ROOM = {
-  roomName: `BookingTestRoom_${Date.now()}`,
-  type: 'Single',
-  accessible: false,
-  roomPrice: 99,
-  features: ['WiFi', 'TV'],
+  roomName: `Room_${Date.now()}`,
+  type: 'Twin',
+  accessible: true,
+  roomPrice: 150,
+  features: ['WiFi', 'TV', 'Safe'],
   description: 'A cozy test room',
   image: 'https://www.mwtestconsultancy.co.uk/img/room1.jpg',
 };
