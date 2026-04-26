@@ -1,10 +1,12 @@
 require('dotenv').config();
 import { AuthClient } from "./AuthClient";
+import { BookingClient } from "./BookingClient";
 import { RoomClient } from "./RoomClient";
 
 export interface AuthenticatedClients {
   auth: AuthClient;
   rooms: RoomClient;
+  bookings: BookingClient;
 }
 
 /**
@@ -22,12 +24,14 @@ export class ApiClientFactory {
   static create(): AuthenticatedClients {
     const auth = new AuthClient();
     const rooms = new RoomClient();
+    const bookings = new BookingClient();
 
     // Intercept setToken on AuthClient so the token is forwarded to siblings
     const originalSetToken = auth.setToken.bind(auth);
     auth.setToken = (token: string) => {
       originalSetToken(token);
       rooms.setToken(token);
+      bookings.setToken(token);
     };
 
     // Also forward clearToken (logout)
@@ -35,9 +39,10 @@ export class ApiClientFactory {
     auth.clearToken = () => {
       originalClearToken();
       rooms.clearToken();
+      bookings.clearToken();
     };
 
-    return { auth, rooms };
+    return { auth, rooms, bookings };
   }
 
   /**
