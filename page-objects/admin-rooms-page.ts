@@ -1,4 +1,5 @@
 import { RoomPayload } from "../api/RoomClient";
+import { AdminMessagesPage } from "./admin-messages-page";
 import { BasePage } from "./base-page";
 
 export class AdminRoomsPage extends BasePage {
@@ -12,7 +13,8 @@ export class AdminRoomsPage extends BasePage {
     private readonly roomPriceInput = this.page.locator('#roomPrice');
     private readonly createRoomButton = this.page.getByRole('button', { name: 'Create' });
     public readonly errorMessage = this.page.locator('.alert-danger');
-    public readonly roomList = this.page.getByTestId('roomlisting');;
+    public readonly roomList = this.page.getByTestId('roomlisting');
+    public readonly messagesLink = this.page.getByRole('link', { name: 'Messages' });
     public readonly roomByName = (name: string) => this.roomList.filter({ hasText: name});
 
     async logout() {
@@ -28,5 +30,9 @@ export class AdminRoomsPage extends BasePage {
             await this.page.getByRole('checkbox', { name: feature }).check();
         }
         await this.createRoomButton.click();
+    }
+
+    async clickMessagesLink() {
+        await this.messagesLink.click();
     }
 }

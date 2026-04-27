@@ -40,3 +40,14 @@
 | **Expected response** | `{ "error": "Failed to create booking" }` |
 | **Automated** | `tests/api/booking.api.test.ts` |
 | **Status** | ❌ **Failing** — API currently allows past-date bookings. Test is kept for when the bug is fixed. |
+
+---
+
+### TC-BOOKING-UI-01 · Make Booking (UI)
+| | |
+|---|---|
+| **Preconditions** | User is on dashboard page |
+| **Steps** | 1. Choose one room, go to booking page, choose date from future and book |
+| **Expected** | Booking Confirmed message displayed, admin receives message about booking|
+| **Automated** | `tests/ui/booking.ui.spec.ts` |
+

@@ -4,6 +4,9 @@ import { test } from '../../custom-test';
 
 // Also is possble to have one test with multiple steps for login/logout, but I prefer to have separate tests for better isolation and reporting.
 test.describe('Authentication UI', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/admin');
+  });
 
   test('TC-AUTH-UI-01: Login fails and shows error with invalid credentials', async ({ page, loginPage, adminRoomsPage }) => {
     await loginPage.login(INVALID_CREDENTIALS.username, INVALID_CREDENTIALS.password);

@@ -7,6 +7,7 @@ test.describe('Room Management UI', () => {
     let createdRoom: Locator;
 
     await test.step('TC-ROOM-UI-01: Login with valid credentials', async () => {
+        await loginPage.goto();
         await loginPage.login(ADMIN_CREDENTIALS.username, ADMIN_CREDENTIALS.password);
         await expect(page).toHaveURL(/\/admin\/rooms$/);
     });
@@ -28,6 +29,5 @@ test.describe('Room Management UI', () => {
         await createdRoom.locator('.roomDelete').click();
         await expect(createdRoom).toBeHidden();
     });
-
   })
 });

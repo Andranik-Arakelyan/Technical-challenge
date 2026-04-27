@@ -57,3 +57,10 @@ export const BOOKING_PAYLOAD = (roomId: number) => ({
   },
 });
 
+export const BOOKING_DATA = {
+  firstname:'Maya', 
+  lastname: 'Kaloyan',
+  email: 'mayakaloyan@gmail.com',
+  phone: '+37477898878'
+};
+
