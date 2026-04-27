@@ -25,10 +25,6 @@ export class ApiClient {
     this.token = token;
   }
 
-  getToken(): string | null {
-    return this.token;
-  }
-
   clearToken(): void {
     this.token = null;
   }
